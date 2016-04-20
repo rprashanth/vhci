@@ -239,13 +239,17 @@ def weather(command, device, output):
                     weather_report.append('Rain upto '+str(result['list'][day]['rain']) + ' millimetres is expected')
                 else:
                     weather_report.append('no rain')
-            elif 'cloudy' in input_array:
-                if result['list'][day]['weather'][0]['description'] == 'few clouds': # need to check on 'main' in returned json
-                    weather_report.append('yes its cloudy')
+            elif 'sunny' in input_array:
+                if result['list'][day]['temp']['max'] > 303:
+                    weather_report.append('yes its sunny, you may even need umbrella')
                 else:
-                    weather_report.append('not cloudy')
+                    weather_report.append('No')
             else:
-                pass # ex: will it be sunny tomorrow "to be handled becacause of some calculations to compute"
+                if result['list'][day]['weather'][0]['main'] == 'Clouds': # need to check on 'main' in returned json
+                    weather_report.append('Yes its cloudy')
+                    weather_report.append(result['list'][day]['weather'][0]['description'])
+                else:
+                    weather_report.append('Not cloudy')
 
         elif command['intent'] == 'humidity':
             weather_report.append(result['list'][day]['humidity'])
