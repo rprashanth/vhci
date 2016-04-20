@@ -8,8 +8,8 @@ oldResult = {}
 output = {}
 
 def test_totem():
-	core.register('totem', devices.totem)
 	global newcommand, oldResult, output
+	core.register('totem', devices.totem)
 	expected_output_1 = {
 		"arguments": {
 		 	"name": " devices"
@@ -40,23 +40,19 @@ def test_totem():
 		}
 	actual_output, device, output = core.parse('totem play devices', newcommand, oldResult, output)
 	assert expected_output_1 == actual_output
-	print('success 1 totem')
 	actual_output, device, output = core.parse('totem pause', newcommand, oldResult, output)
 	assert expected_output_2 == actual_output
-	print('success 2 totem')
 	actual_output, device, output = core.parse('totem',newcommand, oldResult, output)
 	assert expected_output_3 == actual_output
-	print('success 3 totem')
 	actual_output, device, output = core.parse('totem quit',newcommand, oldResult, output)
 	assert expected_output_4 == actual_output
-	print('success 4 totem')
 	actual_output, device, output = core.parse('totem next',newcommand, oldResult, output)
 	assert expected_output_5 == actual_output
-	print('success 5 totem')
+	print('finished testing')
 
-def  test_tweets():
-	core.register('tweet', devices.tweet)
+def test_tweets():
 	global newcommand, oldResult, output
+	core.register('tweet', devices.tweet)
 	expected_output_1 = {
 		"arguments": {
 			"name": " google"
@@ -85,20 +81,17 @@ def  test_tweets():
 	}
 	actual_output, device, output = core.parse('tweets on google', newcommand, oldResult, output)
 	assert expected_output_1 == actual_output
-	print('success 6 tweets')
 	actual_output, device, output = core.parse('tweets in india', newcommand, oldResult, output)
 	assert expected_output_2 == actual_output
-	print('success 7 tweets')
 	actual_output, device, output = core.parse('tweets by rcbtweets', newcommand, oldResult, output)
 	assert expected_output_3 == actual_output
-	print('success 8 tweets')
 	actual_output, device, output = core.parse('tweets', newcommand, oldResult, output)
 	assert expected_output_4 == actual_output
-	print('success 9 tweets')
+	print('finished testing')
 
 def test_weather():
-	core.register('weather',devices.weather)
 	global newcommand, oldResult, output
+	core.register('weather',devices.weather)
 	expected_output_1 = {
   		"arguments": {},
   		"device": "weather",
@@ -123,18 +116,14 @@ def test_weather():
 	}
 	actual_output, device, output = core.parse('forecast will it rain tomorrow', newcommand, oldResult, output)
 	assert expected_output_1 == actual_output
-	print('success 10 weather')
 	actual_output, device, output = core.parse('forecast set city london', newcommand, oldResult, output)
 	print(actual_output)
 	assert expected_output_2 == actual_output
-	print('success 11 weather')
 	actual_output, device, output = core.parse('forecast max temperature', newcommand, oldResult, output)
 	assert expected_output_3 == actual_output
-	print('success 12 weather')
 	actual_output, device, output = core.parse('forecast what will be the weather tomorrow', newcommand, oldResult, output)
 	assert expected_output_4 == actual_output
-	print('success 13 weather')
-
+	print('finished testing')
 
 test_totem()
 test_tweets()
