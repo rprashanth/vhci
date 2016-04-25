@@ -35,10 +35,10 @@ The application should be robust. Any issues in the execution handler of one app
 The system should be easily scalable without sacrificing performance. We should be able to add more modules and features as and when they are required without taking a performance hit.
 We can improve the usability of the system by having a simple interface that doesn't confuse users.
 
-
 Functional Requirements:
 The application should display relevant information to the user so that they know what is happening.
 Application has a web interface for user interaction, where user gives voice input and output message is displayed.
+Parsing of input commands is based on rules generated, as our application is rule based. 
 
 
 Software Requirements:
