@@ -20,7 +20,7 @@ Therefore, a simple, ready use to solution is required. We have developed a gene
 Literature Survey:
 
 
-Non-functional Requirements:
+Non-functional Requirements: (These are quality attributes)
 The application is reliable as you always get expected and same output on differnet trials. 
 The availability for some modules is high, for other modules it depends on internet speed.
 Higly scalable as it is able to handle growing amount work i.e more number of modules can be added without affecting the performance.
@@ -29,6 +29,7 @@ Each module has a seperate execution handler, so if something goes wrong it can 
 Because the application is voice dependent it has low reliabilty abd availabilty. 
 
 Functional Requirements:
+Functional requirement is that it essentially specifie something the system should do.
 Application has a web interface for user interaction, where user gives voice input and output message is displayed. 
 Parsing of input commands is based on rules generated, as our application is rule based.
 
